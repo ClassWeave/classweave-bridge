@@ -17,10 +17,15 @@
 为整个课堂会话提供一条**纯传输层、零业务状态**的中继链路。
 
 ```
-[macOS Host] ── USB-C (USB 3.0, ADB Tunnel TCP) ── [OrangePI 5B / Android 12 / Bridge] ── BT RFCOMM ── [Android A]
-                                                                                                \─────── [Android B]
+[macOS Host] ◀── USB-C (USB 3.0, ADB Tunnel TCP) ── [OrangePI 5B / Android 12 / Bridge] ◀── BT RFCOMM ── [Android A]
+                                                                                                  ◀────── [Android B]
 ```
 
+> 图中箭头方向遵循 ClassWeave 的协议语义：**业务权威端是 macOS Host**，
+> 所有学生端的事件（白板笔迹、弹幕、互动等）最终上行汇聚至 Host；
+> Host 再以 `state.full / state.delta` 反向广播下行至各客户端。Bridge
+> 同时承载这两个方向的转发，本图只突出汇聚方向。
+>
 > Bridge 是 **纯传输层中继**，不修改任何业务 payload、不持有任何业务状态、
 > 不代替主控端发出业务确认。所有业务权威归 macOS Host。
 
