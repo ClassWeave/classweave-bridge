@@ -1,0 +1,20 @@
+ClassWeave Bridge
+Copyright 2026 ClassWeave Contributors
+
+This product includes software developed by the ClassWeave project as
+coursework for the《移动互联网前沿技术》(Frontier Technologies of Mobile
+Internet) course, MEM26Spring.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+You may obtain a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Third-party dependencies are declared in `app/build.gradle.kts` and
+managed by Gradle. Their respective licenses apply, including but not
+limited to:
+
+  * Kotlin / kotlinx.serialization / kotlinx.coroutines  — Apache-2.0
+  * Jetpack Compose / AndroidX                           — Apache-2.0
+  * AndroidX Bluetooth (android.bluetooth.* platform APIs) — Android Open
+    Source Project, Apache-2.0
